@@ -1,0 +1,61 @@
+{
+  "basePath": "http://localhost:8080/api",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "apis": [
+    {
+      "path": "/api-docs.json/term",
+      "description": "Term API"
+    },
+    {
+      "path": "/api-docs.json/enrollment",
+      "description": "enrollment API"
+    },
+    {
+      "path": "/api-docs.json/course",
+      "description": "Course API"
+    },
+    {
+      "path": "/api-docs.json/user",
+      "description": "User API"
+    },
+    {
+      "path": "/api-docs.json/class",
+      "description": "Class API"
+    },
+    {
+      "path": "/api-docs.json/faculty",
+      "description": "Faculty API"
+    },
+    {
+      "path": "/api-docs.json/subject",
+      "description": "Subject API"
+    },
+    {
+      "path": "/api-docs.json/department",
+      "description": "Department API"
+    }
+  ],
+  "authorizations": {
+    "oauth2": {
+      "type": "oauth2",
+      "scopes": [
+        {
+          "scope": "terms",
+          "description": "Access to term operations"
+        }
+      ],
+      "grantTypes": {
+        "authorization_code": {
+          "tokenRequestEndpoint": {
+            "url": "http://csl-auth.sodoge.ca/oauth/access_code",
+            "clientIdName": "client_id",
+            "clientSecretName": "client_secret"
+          }
+        }
+      } 
+    }
+  }
+}

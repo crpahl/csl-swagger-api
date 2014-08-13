@@ -1,0 +1,200 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/courses",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all courses",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Course",
+          "nickname": "getAllCourses"
+        }
+      ]
+    },
+    {
+      "path": "/courses/{id}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find course by id",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Course",
+          "nickname": "getCourseById",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "path",
+              "required": true,
+              "description": "The id of the course to return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/courses/{id}/classes",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all classes for the given course",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Class",
+          "nickname": "getClassesByCourseId",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "path",
+              "required": true,
+              "description": "The id of the course to return classes for"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Course": {
+      "id": "Course",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "term_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catalog": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "career": {
+          "type": "string"
+        },
+        "units": {
+          "type": "double"
+        },
+        "created_at": {
+          "type": "date"
+        },
+        "updated_at": {
+          "type": "date"
+        },
+        "classes_link": {
+          "type": "string"
+        },
+        "term_link": {
+          "type": "string"
+        }
+      }
+    },
+    "Class": {
+      "id": "Class",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "term_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "course_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "section": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "enroll_status": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "date"
+        },
+        "end_date": {
+          "type": "date"
+        },
+        "session": {
+          "type": "string"
+        },
+        "campus": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "auto_enroll": {
+          "type": "string"
+        },
+        "class_topic": {
+          "type": "string"
+        },
+        "class_notes": {
+          "type": "string"
+        },
+        "consent": {
+          "type": "string"
+        },
+        "grading_basis": {
+          "type": "string"
+        },
+        "instruction_mode": {
+          "type": "string"
+        },
+        "units": {
+          "type": "double"
+        },
+        "class_url": {
+          "type": "string"
+        },
+        "instructor_ccid": {
+          "type": "string"
+        },
+        "exam_status": {
+          "type": "string"
+        },
+        "exam_start_time": {
+          "type": "date"
+        },
+        "exam_end_time": {
+          "type": "date"
+        },
+        "exame_locaion": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

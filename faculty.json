@@ -1,0 +1,65 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/faculties",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all faculties",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Faculty",
+          "nickname": "getAllFaculties"
+        }
+      ]
+    },
+    {
+      "path": "/faculties/{code}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find faculty by code",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Faculty",
+          "nickname": "getFacultyByCode",
+          "parameters": [
+            {
+              "name": "code",
+              "dataType": "string",
+              "paramType": "path",
+              "required": true,
+              "description": "The code of the Faculty to return"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Faculty": {
+      "id": "Faculty",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

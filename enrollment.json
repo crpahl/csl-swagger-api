@@ -1,0 +1,64 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/enrollments/{id}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find enrollment by id",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Enrollment",
+          "nickname": "getEnrollmentById",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "path",
+              "required": true,
+              "description": "The id of the Enrollment to return"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Enrollment": {
+      "id": "Enrollment",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "class_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "role": {
+          "type": "string"
+        },
+        "class_link": {
+          "type": "string"
+        },
+        "user_link": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

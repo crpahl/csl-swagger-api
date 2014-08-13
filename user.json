@@ -1,0 +1,121 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/users",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all users",
+          "notes": "Nothing to see here move along",
+          "responseClass": "User",
+          "nickname": "getAllUsers"
+        }
+      ]
+    },
+    {
+      "path": "/users/{id}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find user by id",
+          "notes": "Nothing to see here move along",
+          "responseClass": "User",
+          "nickname": "getUserById",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "path",
+              "required": true,
+              "description": "The id of the User to return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/users/{id}/enrollments",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Return all enrollments for the given user",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Enrollment",
+          "nickname": "getEnrollmentsByUserId",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "query",
+              "required": true,
+              "description": "The id of the User to return enrollments for"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "User": {
+      "id": "User",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "ccid": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "mail": {
+          "type": "string"
+        }
+      }
+    },
+    "Enrollment": {
+      "id": "Enrollment",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "class_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "role": {
+          "type": "string"
+        },
+        "class_link": {
+          "type": "string"
+        },
+        "user_link": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/terms",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all terms",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Term",
+          "nickname": "getAllTerms"
+        }
+      ]
+    },
+    {
+      "path": "/terms/{id}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find term by id",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Term",
+          "nickname": "getTermById",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "path",
+              "required": true,
+              "description": "The id of the term to return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/terms/{id}/courses",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all courses for the given term",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Course",
+          "nickname": "getCoursesByTermById",
+          "parameters": [
+            {
+              "name": "id",
+              "dataType": "integer",
+              "paramType": "path",
+              "required": true,
+              "description": "The id of the term to return courses for"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Term": {
+      "id": "Term",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "date"
+        },
+        "updated_at": {
+          "type": "date"
+        },
+        "start": {
+          "type": "date"
+        },
+        "end": {
+          "type": "date"
+        },
+        "courses_link": {
+          "type": "string",
+          "models": null
+        }
+      }
+    },
+    "Course": {
+      "id": "Course",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "term_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catalog": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "career": {
+          "type": "string"
+        },
+        "units": {
+          "type": "double"
+        },
+        "created_at": {
+          "type": "date"
+        },
+        "updated_at": {
+          "type": "date"
+        },
+        "classes_link": {
+          "type": "string"
+        },
+        "term_link": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

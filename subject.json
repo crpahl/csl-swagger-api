@@ -1,0 +1,65 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/subjects",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all subjects",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Subject",
+          "nickname": "getAllSubjects"
+        }
+      ]
+    },
+    {
+      "path": "/subjects/{code}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find subject by code",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Subject",
+          "nickname": "getSubjectByCode",
+          "parameters": [
+            {
+              "name": "code",
+              "dataType": "string",
+              "paramType": "path",
+              "required": true,
+              "description": "The code of the subject to return"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Subject": {
+      "id": "Subject",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

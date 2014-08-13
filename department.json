@@ -1,0 +1,65 @@
+{
+  "basePath": "http://csl-api.sodoge.ca",
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "swaggerURL": "/swagger",
+  "swaggerJSON": "/api-docs.json",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/departments",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Returns all departments",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Department",
+          "nickname": "getAllDepartments"
+        }
+      ]
+    },
+    {
+      "path": "/departments/{code}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find department by code",
+          "notes": "Nothing to see here move along",
+          "responseClass": "Department",
+          "nickname": "getDepartmentByCode",
+          "parameters": [
+            {
+              "name": "code",
+              "dataType": "string",
+              "paramType": "path",
+              "required": true,
+              "description": "The code of the department to return"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Department": {
+      "id": "Department",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
